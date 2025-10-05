@@ -11,7 +11,6 @@ import Gallery from "./components/Gallery";
 import Statistics from "./components/Statistics";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
 
 
 function App() {
@@ -46,7 +45,6 @@ function App() {
 
       {/* Footer */}
       <Footer />
-     <ScrollToTop /> {/* Tambahkan di sini */}
 
     </div>
   );
