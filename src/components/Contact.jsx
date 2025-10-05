@@ -37,17 +37,17 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-gray-950 text-white py-20">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="contact" className="bg-gray-950 text-white py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <motion.h2
-          className="text-4xl font-bold text-yellow-400 text-center mb-6"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-400 text-center mb-6"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           Hubungi Kami
         </motion.h2>
-        <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
           Isi form di bawah ini untuk mengirim pesan kepada kami. Semua inputan akan tersimpan otomatis.
         </p>
 
@@ -58,7 +58,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-gray-900 p-8 rounded-2xl shadow-lg space-y-6"
+            className="bg-gray-900 p-6 sm:p-8 rounded-2xl shadow-lg space-y-6"
           >
             <div>
               <label className="block text-gray-300 mb-2">Nama</label>
@@ -68,7 +68,7 @@ const Contact = () => {
                 value={form.name}
                 onChange={handleChange}
                 required
-                className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-yellow-400"
+                className="w-full p-3 sm:p-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 text-sm sm:text-base"
                 placeholder="Masukkan nama Anda"
               />
             </div>
@@ -81,7 +81,7 @@ const Contact = () => {
                 value={form.email}
                 onChange={handleChange}
                 required
-                className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-yellow-400"
+                className="w-full p-3 sm:p-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 text-sm sm:text-base"
                 placeholder="Masukkan email Anda"
               />
             </div>
@@ -94,7 +94,7 @@ const Contact = () => {
                 value={form.message}
                 onChange={handleChange}
                 required
-                className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-yellow-400"
+                className="w-full p-3 sm:p-4 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-yellow-400 text-sm sm:text-base"
                 placeholder="Tulis pesan Anda..."
               ></textarea>
             </div>
@@ -104,7 +104,7 @@ const Contact = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               disabled={loading}
-              className={`w-full py-3 rounded-lg font-semibold transition ${
+              className={`w-full py-3 sm:py-4 rounded-lg font-semibold transition text-sm sm:text-base ${
                 loading ? "bg-gray-700 cursor-not-allowed" : "bg-yellow-500 hover:bg-yellow-400 text-black"
               }`}
             >
@@ -112,7 +112,7 @@ const Contact = () => {
             </motion.button>
 
             {sent && (
-              <p className="text-green-400 text-center mt-4">
+              <p className="text-green-400 text-center mt-4 text-sm sm:text-base">
                 ✅ Pesan kamu berhasil disimpan!
               </p>
             )}
@@ -129,7 +129,7 @@ const Contact = () => {
               title="Lokasi Tambang"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31827.05693293053!2d121.604!3d-4.039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2da5b3c25b7d3c3d%3A0x19e98b66d0ee6a4a!2sKonawe%2C%20Sulawesi%20Tenggara!5e0!3m2!1sid!2sid!4v1698846882435!5m2!1sid!2sid"
               width="100%"
-              height="450"
+              height="350"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"

@@ -34,22 +34,22 @@ const projects = [
 const Projects = () => {
   return (
     <section id="projects" className="bg-gray-900 py-20 text-white">
-      <div className="max-w-7xl mx-auto px-6 text-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.h2
-          className="text-4xl font-bold text-yellow-400 mb-6"
+          className="text-4xl sm:text-5xl font-bold text-yellow-400 mb-6"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
           Proyek & Operasi Tambang
         </motion.h2>
-        <p className="text-gray-300 mb-12 max-w-3xl mx-auto">
+        <p className="text-gray-300 mb-12 max-w-3xl mx-auto text-sm sm:text-base">
           PT EMUDI mengelola berbagai proyek strategis di seluruh Indonesia,
           dengan fokus pada keberlanjutan, keselamatan kerja, dan efisiensi
           produksi sumber daya alam.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {projects.map((project) => (
             <motion.div
               key={project.id}
@@ -61,16 +61,16 @@ const Projects = () => {
               <img
                 src={project.image}
                 alt={project.name}
-                className="h-56 w-full object-cover"
+                className="w-full h-56 sm:h-64 md:h-72 lg:h-64 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-yellow-400 mb-2">
+                <h3 className="text-xl sm:text-2xl font-semibold text-yellow-400 mb-2">
                   {project.name}
                 </h3>
-                <p className="text-gray-300 text-sm mb-3">
+                <p className="text-gray-300 text-sm sm:text-base mb-3">
                   {project.description}
                 </p>
-                <p className="text-gray-400 text-xs italic">
+                <p className="text-gray-400 text-xs sm:text-sm italic">
                   📍 {project.location}
                 </p>
               </div>

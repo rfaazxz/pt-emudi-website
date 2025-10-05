@@ -32,22 +32,22 @@ const Hero = () => {
 
       {/* Text content */}
       <motion.div
-        className="relative text-center max-w-2xl px-6"
+        className="relative text-center max-w-2xl px-4 sm:px-6"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        <h1 className="text-5xl md:text-6xl font-extrabold text-[#d4af37] mb-6 leading-tight drop-shadow-lg">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#d4af37] mb-4 sm:mb-6 leading-snug sm:leading-tight drop-shadow-lg">
           Eksplorasi & Inovasi Tambang Emas dan Nikel Indonesia
         </h1>
-        <p className="text-lg md:text-xl text-gray-300 mb-8">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-6 sm:mb-8">
           Membangun masa depan industri tambang dengan teknologi berkelanjutan
           dan efisiensi tinggi.
         </p>
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="px-8 py-3 bg-[#d4af37] text-black font-bold rounded-lg shadow-lg hover:bg-[#c4a232] transition"
+          className="px-6 sm:px-8 py-2 sm:py-3 bg-[#d4af37] text-black font-bold rounded-lg shadow-lg hover:bg-[#c4a232] transition text-sm sm:text-base"
         >
           Jelajahi Operasi Kami
         </motion.button>

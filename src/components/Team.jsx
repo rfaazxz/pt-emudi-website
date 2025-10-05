@@ -41,23 +41,23 @@ const Team = () => {
     <section id="team" className="bg-gray-950 py-20 text-white">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <motion.h2
-          className="text-4xl font-bold text-yellow-400 mb-6"
+          className="text-3xl sm:text-4xl font-bold text-yellow-400 mb-6"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
           Tim Profesional Kami
         </motion.h2>
-        <p className="text-gray-300 mb-12 max-w-3xl mx-auto">
+        <p className="text-gray-300 mb-12 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed">
           Di balik kesuksesan PT EMUDI terdapat tim ahli dengan pengalaman
           bertahun-tahun di industri pertambangan emas dan nikel.
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {teamMembers.map((member) => (
             <motion.div
               key={member.id}
-              className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-yellow-400/30 transition duration-300"
+              className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden sm:hover:shadow-yellow-400/30 transition duration-300"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -65,14 +65,14 @@ const Team = () => {
               <img
                 src={member.image}
                 alt={member.name}
-                className="h-56 w-full object-cover"
+                className="h-56 sm:h-60 w-full object-cover"
               />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-yellow-400 mb-1">
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-yellow-400 mb-1">
                   {member.name}
                 </h3>
-                <p className="text-gray-400 text-sm mb-3">{member.role}</p>
-                <p className="text-gray-300 text-sm">{member.desc}</p>
+                <p className="text-gray-400 text-xs sm:text-sm mb-2">{member.role}</p>
+                <p className="text-gray-300 text-sm leading-relaxed">{member.desc}</p>
               </div>
             </motion.div>
           ))}

@@ -22,9 +22,9 @@ const features = [
 
 const Features = () => {
   return (
-    <section id="features" className="py-24 bg-[#1f1f1f] text-center">
+    <section id="features" className="py-16 sm:py-20 bg-[#1f1f1f] text-center px-4 sm:px-6 lg:px-8">
       <motion.h2
-        className="text-3xl md:text-4xl font-bold text-[#d4af37] mb-12 uppercase tracking-widest"
+        className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#d4af37] mb-10 sm:mb-12 uppercase tracking-widest"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -33,19 +33,19 @@ const Features = () => {
         Nilai Utama Kami
       </motion.h2>
 
-      <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto px-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 max-w-6xl mx-auto">
         {features.map((f, i) => (
           <motion.div
             key={i}
-            className="bg-[#121212] p-8 rounded-xl shadow-lg hover:shadow-[#d4af37]/20 transition-all duration-300"
+            className="bg-[#121212] p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-[#d4af37]/20 transition-all duration-300"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: i * 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="flex justify-center mb-6">{f.icon}</div>
-            <h3 className="text-xl font-bold mb-3">{f.title}</h3>
-            <p className="text-gray-400">{f.desc}</p>
+            <div className="flex justify-center mb-4 sm:mb-6">{f.icon}</div>
+            <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">{f.title}</h3>
+            <p className="text-gray-400 text-sm sm:text-base">{f.desc}</p>
           </motion.div>
         ))}
       </div>
