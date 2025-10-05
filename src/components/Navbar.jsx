@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import ScrollToTop from "./ScrollToTop";
+
 
 function Navbar() {
   const [activeSection, setActiveSection] = useState("hero");

@@ -1,80 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronUp } from "lucide-react";
 
-function Navbar() {
-  const [activeSection, setActiveSection] = useState("hero");
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleScroll = () => {
-    const sections = ["hero", "features", "about", "projects", "team", "gallery", "statistics", "contact"];
-    const scrollPos = window.scrollY + 100;
-
-    for (let i = sections.length - 1; i >= 0; i--) {
-      const section = document.getElementById(sections[i]);
-      if (section && section.offsetTop <= scrollPos) {
-        setActiveSection(sections[i]);
-        break;
-      }
-    }
-  };
+const ScrollToTop = () => {
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const toggleVisibility = () => {
+      setIsVisible(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      window.scrollTo({
-        top: section.offsetTop - 70,
-        behavior: "smooth",
-      });
-      setIsOpen(false);
-    }
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-gray-900 text-white shadow-md z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        <h1 className="text-2xl font-bold text-yellow-400 cursor-pointer" onClick={() => scrollToSection("hero")}>
-          PT EMUDI
-        </h1>
-
-        <ul className="hidden md:flex space-x-6">
-          {["hero", "features", "about", "contact"].map((section) => (
-            <li key={section}>
-              <button
-                onClick={() => scrollToSection(section)}
-                className={`hover:text-yellow-400 transition ${activeSection === section ? "text-yellow-400 font-semibold" : ""}`}
-              >
-                {section === "hero" ? "Beranda" : section === "features" ? "Layanan" : section === "about" ? "Tentang Kami" : "Kontak"}
-              </button>
-            </li>
-          ))}
-        </ul>
-
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+    <>
+      {isVisible && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 md:bottom-8 md:right-8 bg-yellow-500 text-black p-3 rounded-full shadow-lg hover:bg-yellow-400 transition z-[9999]"
+        >
+          <ChevronUp size={24} />
         </button>
-      </div>
-
-      {isOpen && (
-        <ul className="md:hidden bg-gray-800 px-6 py-4 space-y-4">
-          {["hero", "features", "about", "contact"].map((section) => (
-            <li key={section}>
-              <button
-                onClick={() => scrollToSection(section)}
-                className="block w-full text-left hover:text-yellow-400"
-              >
-                {section === "hero" ? "Beranda" : section === "features" ? "Layanan" : section === "about" ? "Tentang Kami" : "Kontak"}
-              </button>
-            </li>
-          ))}
-        </ul>
       )}
-    </nav>
+    </>
   );
-}
+};
 
-export default Navbar;
+export default ScrollToTop;

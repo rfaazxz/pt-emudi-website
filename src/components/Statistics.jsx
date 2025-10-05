@@ -26,8 +26,8 @@ const productionData = [
 const Statistics = () => {
   return (
     <section id="statistics" className="glow-bg bg-gray-900 py-20 text-white relative">
-
-<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        
         {/* Judul */}
         <motion.h2
           className="text-4xl font-bold text-yellow-400 mb-6"
@@ -38,7 +38,7 @@ const Statistics = () => {
           Data Produksi & Statistik
         </motion.h2>
 
-        <p className="text-3xl sm:text-4xl font-bold">
+        <p className="text-3xl sm:text-4xl font-bold mb-12">
           Berikut adalah data produksi dan pertumbuhan hasil tambang{" "}
           <span className="text-yellow-400 font-semibold">PT. EMUDI</span>{" "}
           selama 5 tahun terakhir.
@@ -52,9 +52,8 @@ const Statistics = () => {
           transition={{ duration: 0.8 }}
         >
           {/* Total Emas */}
-         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
-
-<h3 className="text-xl sm:text-2xl font-semibold text-yellow-400 mb-4">
+          <div className="bg-gray-800 p-6 rounded-2xl shadow-lg">
+            <h3 className="text-2xl font-semibold text-yellow-400 mb-2">
               Total Emas 2024
             </h3>
             <p className="text-4xl font-bold">
@@ -85,6 +84,7 @@ const Statistics = () => {
 
         {/* Grafik Produksi */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          
           {/* Grafik Batang */}
           <motion.div
             className="bg-gray-800 p-6 rounded-2xl shadow-lg"
@@ -108,7 +108,7 @@ const Statistics = () => {
             </ResponsiveContainer>
           </motion.div>
 
-          {}
+          {/* Grafik Garis */}
           <motion.div
             className="bg-gray-800 p-6 rounded-2xl shadow-lg"
             initial={{ opacity: 0, x: 50 }}
